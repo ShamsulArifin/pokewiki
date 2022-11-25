@@ -1,3 +1,4 @@
+import './App.css';
 import React, { useState } from 'react';
 import axios from 'axios';
 import Card from '@mui/material/Card';
@@ -62,20 +63,30 @@ export default function App() {
               >
                 <ImageList cols={2} width="50%" height="50%">
                   <ImageListItem>
-                    <img src={data.sprites.other['home'].front_default} />
+                    <img
+                      src={data.sprites.other['home'].front_default}
+                      alt="front"
+                    />
                   </ImageListItem>
                   <ImageListItem>
-                    <img src={data.sprites.other['home'].front_shiny} />
+                    <img
+                      src={data.sprites.other['home'].front_shiny}
+                      alt="front_shiny"
+                    />
                   </ImageListItem>
                   {data.sprites['front_female'] && (
                     <ImageListItem>
-                      <img src={data.sprites.other['home'].front_female} />
+                      <img
+                        src={data.sprites.other['home'].front_female}
+                        alt="front_female"
+                      />
                     </ImageListItem>
                   )}
                   {data.sprites['front_shiny_female'] && (
                     <ImageListItem>
                       <img
                         src={data.sprites.other['home'].front_shiny_female}
+                        alt="front_shiny_female"
                       />
                     </ImageListItem>
                   )}
