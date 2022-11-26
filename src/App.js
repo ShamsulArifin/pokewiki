@@ -15,9 +15,9 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
+import { Grid } from '@mui/material';
 
 export default function App() {
   const [pokemon, setPokemon] = useState('pikachu');
@@ -43,7 +43,7 @@ export default function App() {
     setPokemon(e.target.value.toLowerCase());
   };
 
-  const handdleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     getPokemon();
   };
@@ -68,16 +68,24 @@ export default function App() {
           </Toolbar>
         </AppBar>
       </Box>
-      <h1>Wellcome to PokeWiki</h1>
-      <form onSubmit={handdleSubmit}>
-        <label>
-          <input
-            type="text"
-            onChange={handleChange}
-            placeholder="Enter Pokemon Name"
-          />
-        </label>
-      </form>
+      <Grid container justifyContent="center" padding={2}>
+        <Card padding={20} elevation={10}>
+          <Grid container justifyContent="center">
+            <Typography variant="h6" fontSize="30px">
+              Wellcome to PokeWiki
+            </Typography>
+          </Grid>
+          <form onSubmit={handleSubmit}>
+            <label>
+              <input
+                type="text"
+                onChange={handleChange}
+                placeholder="Enter Pokemon Name"
+              />
+            </label>
+          </form>
+        </Card>
+      </Grid>
       {pokemonData.map((data) => {
         return (
           <div className="container">
