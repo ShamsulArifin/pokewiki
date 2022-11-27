@@ -35,12 +35,8 @@ export default function App() {
 
   return (
     <Routes>
-      <Route exact path="/" element={(props) => <Pokedex {...props} />} />
-      <Route
-        exact
-        path="/:pokemonId"
-        element={(props) => <Pokemon {...props} />}
-      />
+      <Route exact={true} path="/" element={<Pokedex />} />
+      <Route exact={true} path="/:pokemonId" element={<Pokemon />} />
     </Routes>
     // <div className="App">
     //   <Box sx={{ flexGrow: 1 }}>
